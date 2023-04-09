@@ -46,11 +46,11 @@ public class Applicant {
         private String dateOfBirth;
 
         @Column(
-                name = "adress",
+                name = "address",
                 nullable = false,
                 columnDefinition = "TEXT"
         )
-        private String adress;
+        private String address;
 
         @Column(
                 name = "email",
@@ -66,12 +66,12 @@ public class Applicant {
         )
         private Integer age;
 
-        public Applicant(Long id, String firstName, String lastName, String dateOfBirth, String adress, String email, Integer age) {
+        public Applicant(Long id, String firstName, String lastName, String dateOfBirth, String address, String email, Integer age) {
                 this.id = id;
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.dateOfBirth = dateOfBirth;
-                this.adress = adress;
+                this.address = address;
                 this.email = email;
                 this.age = age;
         }
@@ -112,12 +112,12 @@ public class Applicant {
                 this.dateOfBirth = dateOfBirth;
         }
 
-        public String getAdress() {
-                return adress;
+        public String getAddress() {
+                return address;
         }
 
-        public void setAdress(String adress) {
-                this.adress = adress;
+        public void setAddress(String address) {
+                this.address = address;
         }
 
         public String getEmail() {
@@ -136,8 +136,19 @@ public class Applicant {
                 this.age = age;
         }
 
-
+        @Override
+        public String toString() {
+                return "Applicant{" +
+                        "id=" + id +
+                        ", firstName='" + firstName + '\'' +
+                        ", lastName='" + lastName + '\'' +
+                        ", dateOfBirth='" + dateOfBirth + '\'' +
+                        ", address='" + address + '\'' +
+                        ", email='" + email + '\'' +
+                        ", age=" + age +
+                        '}';
         }
+}
 
 
 
